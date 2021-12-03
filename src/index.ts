@@ -1,5 +1,6 @@
 import minimist from "minimist";
 import { day1 } from "./day1";
+import { day2 } from "./day2";
 
 var {
   _: [level],
@@ -7,4 +8,8 @@ var {
 
 if (level == "1") {
   day1();
+}
+
+if (level == "2") {
+  day2();
 }

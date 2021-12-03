@@ -1,28 +1,8 @@
-import { createReadStream } from "fs";
-import { createInterface } from "readline";
-
-const processLineByLine = async (): Promise<number[]> => {
-  const lines: number[] = [];
-
-  const fileStream = createReadStream("./src/day1/data.txt");
-
-  const rl = createInterface({
-    input: fileStream,
-    crlfDelay: Infinity,
-  });
-  // Note: we use the crlfDelay option to recognize all instances of CR LF
-  // ('\r\n') in input.txt as a single line break.
-
-  for await (const line of rl) {
-    // Each line in input.txt will be successively available here as `line`.
-    lines.push(parseInt(line, 10));
-  }
-
-  return lines;
-};
+import { readLines } from "../lib/readLines";
 
 export const day1 = async () => {
-  const lines = await processLineByLine();
+  const linesRaw: string[] = await readLines("./src/day1/data.txt");
+  const lines: number[] = linesRaw.map((l) => parseInt(l, 10));
 
   let count = 0;
 
@@ -39,7 +19,8 @@ export const day1 = async () => {
 };
 
 export const day1Part2 = async () => {
-  const lines = await processLineByLine();
+  const linesRaw: string[] = await readLines("./src/day1/data.txt");
+  const lines: number[] = linesRaw.map((l) => parseInt(l, 10));
 
   let count = 0;
 
