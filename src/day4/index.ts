@@ -1,8 +1,5 @@
+import { add } from "../lib/add";
 import { readLines } from "../lib/readLines";
-
-function add(accumulator: number, a: number) {
-  return accumulator + a;
-}
 
 interface IBoardNumber {
   marked: boolean;
