@@ -6,6 +6,7 @@ import { day4 } from "./day4";
 import { day4part2 } from "./day4/part2";
 import { day5 } from "./day5";
 import { day6 } from "./day6";
+import { day7 } from "./day7";
 
 var {
   _: [level],
@@ -34,4 +35,8 @@ if (level == "5") {
 
 if (level == "6") {
   day6();
+}
+
+if (level == "7") {
+  day7();
 }
